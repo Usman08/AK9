@@ -1,0 +1,62 @@
+﻿@model List<AK9.AppHelper.Models.ServiceModel>
+<div class="footer__main footer__main_mod-a parallax-bg parallax-dark footer_home_custom">
+    <ul class="bg-slideshow">
+        <li>
+            <div style="background-image:url(@Url.Content("~/assets/media/components/footer/bg.jpg"))" class="bg-slide"></div>
+        </li>
+    </ul>
+    <div class="parallax__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="footer__logo"><img src="~/assets/media/general/logo_b.png" style="max-width:165px;" alt="Logo" class="img-responsive" /></a>
+                    <div class="footer-form__info">
+                        <p>AK9 Security Ltd. is a UK based security company, with the expertise to provide variety of security services. We provide all kind of security services to many our satisfied clients in public and private sectors all around UK.</p>
+                    </div>
+
+                    <ul class="social-net list-inline">
+                        @*<li class="social-net__item"><a href="twitter.com" class="social-net__link"><i class="icon fa fa-twitter"></i></a></li>*@
+                        <li class="social-net__item"><a href="https:\\www.facebook.com" target="_blank" class="social-net__link"><i class="icon fa fa-facebook"></i></a></li>
+                        @*<li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i class="icon fa fa-linkedin"></i></a></li>
+                        <li class="social-net__item"><a href="vimeo.com" class="social-net__link"><i class="icon fa fa-vimeo"></i></a></li>
+                        <li class="social-net__item"><a href="rss.com" class="social-net__link"><i class="icon fa fa-rss"></i></a></li>
+                        <li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i class="icon fa fa-google-plus"></i></a></li>*@
+                    </ul>
+                    <!-- end social-list-->
+                </div>
+                <div class="col-sm-7 col-md-5">
+                    <section class="footer-section">
+                        <h3 class="footer-section__title">Our Services</h3>
+                        <ul class="footer-section__list list list-mark-4 service_list_home_custom">
+                            @foreach (var item in Model)
+                            {
+                                <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="@item.ServiceId">@item.ServiceName</a></li>
+                            }
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-sm-5 col-md-3">
+                    <section class="footer-section">
+                        <h3 class="footer-section__title">Address</h3>
+                        <div class="footer__contact footer__contact_lg">Phone: 0044-7861-769156</div>
+                        <div class="footer__contact">Email: info@ak9securityltd.co.uk</div>
+                        <div class="footer__contact">Registered Office Address: C/O 13 Rockware Business Centre, 5 Rockware Avenue, Greenford, Middlesex, United Kingdom, UB6 0AA</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                Copyrights 2016
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="copyright__link"> AK9 Security Services</a>
+                All rights reserved.
+                <a asp-area="" asp-controller="PrivacyPolicy" asp-action="Index" class="copyright__link-2">Privacy Policy</a>
+                <a asp-area="" asp-controller="TermsAndConditions" asp-action="Index" class="copyright__link-2">Terms & Conditions</a>
+            </div>
+        </div>
+    </div>
+</div>*@

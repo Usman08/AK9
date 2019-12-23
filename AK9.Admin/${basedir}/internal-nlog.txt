@@ -1,0 +1,50 @@
+2019-12-01 12:17:11.0927 Info Message Template Auto Format enabled
+2019-12-01 12:17:11.2213 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:17:12.4732 Info Adding target File Target[ownFile-web]
+2019-12-01 12:17:12.4856 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:17:12.5155 Info Found 24 configuration items
+2019-12-01 12:19:03.9530 Info Message Template Auto Format enabled
+2019-12-01 12:19:03.9705 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:19:04.2192 Info Adding target File Target[ownFile-web]
+2019-12-01 12:19:04.2377 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:19:04.2713 Info Found 24 configuration items
+2019-12-01 12:28:35.0526 Info Message Template Auto Format enabled
+2019-12-01 12:28:35.0686 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:28:35.2429 Info Adding target File Target[ownFile-web]
+2019-12-01 12:28:35.2593 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:28:35.2860 Info Found 24 configuration items
+2019-12-01 12:29:36.8396 Info Message Template Auto Format enabled
+2019-12-01 12:29:36.8610 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:29:37.1318 Info Adding target File Target[ownFile-web]
+2019-12-01 12:29:37.1506 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:29:37.1819 Info Found 24 configuration items
+2019-12-01 12:35:18.2048 Info Message Template Auto Format enabled
+2019-12-01 12:35:18.2361 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:35:18.5007 Info Adding target File Target[ownFile-web]
+2019-12-01 12:35:18.5168 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:35:18.5414 Info Found 24 configuration items
+2019-12-01 12:40:10.1837 Info Message Template Auto Format enabled
+2019-12-01 12:40:10.1837 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:40:10.3760 Info Adding target File Target[ownFile-web]
+2019-12-01 12:40:10.3938 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:40:10.4283 Info Found 24 configuration items
+2019-12-01 12:41:26.1348 Info Message Template Auto Format enabled
+2019-12-01 12:41:26.1510 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:41:26.4446 Info Adding target File Target[ownFile-web]
+2019-12-01 12:41:26.4744 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:41:26.5408 Info Found 24 configuration items
+2019-12-01 12:46:20.8874 Info Message Template Auto Format enabled
+2019-12-01 12:46:20.9025 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:46:21.1180 Info Adding target File Target[ownFile-web]
+2019-12-01 12:46:21.1366 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:46:21.1656 Info Found 24 configuration items
+2019-12-01 12:48:28.5657 Info Message Template Auto Format enabled
+2019-12-01 12:48:28.5799 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:48:28.8857 Info Adding target File Target[ownFile-web]
+2019-12-01 12:48:28.9127 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:48:28.9612 Info Found 24 configuration items
+2019-12-01 12:51:11.0500 Info Message Template Auto Format enabled
+2019-12-01 12:51:11.0991 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-01 12:51:11.6335 Info Adding target File Target[ownFile-web]
+2019-12-01 12:51:11.6657 Info Configured from an XML element in D:\Data\Logic Stone\AK9\repo\AK9\AK9.Admin\bin\Debug\netcoreapp2.2\nlog.config...
+2019-12-01 12:51:11.7171 Info Found 24 configuration items

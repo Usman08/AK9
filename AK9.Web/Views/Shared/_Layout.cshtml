@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>@ViewData["Title"] - AK9 Security Services</title>
+
+    <link rel="stylesheet" href="~/assets/css/master.css" />
+    <link rel="stylesheet" href="~/assets/lib/toastr/content/toastr.min.css" />
+    <link rel="stylesheet" href="~/assets/css/site.css" asp-append-version="true" />
+    <!-- SWITCHER-->
+    @*<link href="~/assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all" />
+        <link href="~/assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all" />*@
+    @*<link href="~/assets/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2" media="all" />*@
+    @*<link href="~/assets/plugins/switcher/css/color3.css" rel="alternate stylesheet" title="color3" media="all" />
+        <link href="~/assets/plugins/switcher/css/color4.css" rel="alternate stylesheet" title="color4" media="all" />*@
+
+    @*<environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+                  crossorigin="anonymous"
+                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        </environment>*@
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+</head>
+<body>
+
+    <!-- Loader-->
+    <div id="page-preloader"><span class="spinner"></span></div>
+    <!-- Loader end-->
+
+    <div data-header="sticky" data-header-top="200" class="l-theme animated-css">
+        <!-- Start Switcher-->
+        @*<div class="switcher-wrapper">
+                <div class="demo_changer">
+                    <div class="demo-icon color-primary"><i class="fa fa-cog fa-spin fa-2x"></i></div>
+                    <div class="form_holder">
+                        <div class="predefined_styles">
+                            <div class="skin-theme-switcher">
+                                <h4>Color</h4><a href="javascript:void(0);" data-switchcolor="color1" style="background-color:#5aaff7;" class="styleswitch"></a><a href="javascript:void(0);" data-switchcolor="color2" style="background-color:#FFAC3A;" class="styleswitch"></a><a href="javascript:void(0);" data-switchcolor="color3" style="background-color:#28af0f;" class="styleswitch"></a><a href="javascript:void(0);" data-switchcolor="color4" style="background-color:#e425e9;" class="styleswitch"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <!-- end switcher-->
+
+        <header class="header">
+            <div class="header-top clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="social-net list-inline">
+                                @*<li class="social-net__item"><a href="twitter.com" class="social-net__link"><i class="icon fa fa-twitter"></i></a></li>*@
+                                <li class="social-net__item"><a href="https:\\www.facebook.com" target="_blank" class="social-net__link"><i class="icon fa fa-facebook"></i></a></li>
+                                @*<li class="social-net__item"><a href="linkedin.com" class="social-net__link"><i class="icon fa fa-linkedin"></i></a></li>
+                                    <li class="social-net__item"><a href="vimeo.com" class="social-net__link"><i class="icon fa fa-vimeo"></i></a></li>
+                                    <li class="social-net__item"><a href="rss.com" class="social-net__link"><i class="icon fa fa-rss"></i></a></li>
+                                    <li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i class="icon fa fa-google-plus"></i></a></li>*@
+                            </ul>
+                            <!-- end social-list-->
+                            <div class="header-contact">
+                                <div class="header-contact__item">Call  :<span class="header-contact__info"> 0044-7861-769156</span></div>
+                                <div class="header-contact__item">Email  :<a href="mailto:info@ak9securityltd.co.uk" class="header-contact__info"> info@ak9securityltd.co.uk</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="logo"><img src="~/assets/media/general/logo_c.png" style="max-width:137px;" alt="Logo" class="logo__img img-responsive" /></a>
+                            <div class="header-nav">
+                                <div class="navbar-trigger visible-xs">
+                                    <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                                </div><a href="javascript:void(0);" data-id="quote" class="scroll-to-div btn-second header-main__btn btn btn-sm btn-effect">ask a quote</a>
+                                @*<div class="search-trigger"><i class="icon pe-7s-search"></i></div>*@
+                                <nav class="navbar yamm">
+                                    <div id="navbar-collapse-1" class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                                            <li><a asp-area="" asp-controller="AboutUs" asp-action="Index">About</a></li>
+                                            <li><a href="javascript:void(0);" data-id="certifications" class="scroll-to-div">Certifications</a></li>
+                                            <li class="dropdown">
+                                                <a href="javascript:void(0);" data-id="services" class="scroll-to-div">Services</a>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    @using AK9.AppHelper.Models;
+                                                    @using AK9.AppHelper.AppConstants;
+                                                    @using AK9.AppHelper.Utils;
+                                                    @{
+                                                        if (ViewData["ServiceMenu"] != null)
+                                                        {
+                                                            List<ServiceModel> services = ViewData.GetViewData<List<ServiceModel>>(HelpingVariable.SERVICE_MENU);
+
+                                                            foreach (var item in services)
+                                                            {
+                                                                <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="@item.ServiceId">@item.ServiceName</a></li>
+                                                            }
+                                                        }
+                                                    }
+                                                    @*<li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="1">Security Dog Handler</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="2">Search Dogs</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="3">Event Security</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="4">Surveillance</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="5">Parks Security</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="6">Close Protection</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="7">Maritime Security</a></li>
+                                                        <li><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="8">Training</a></li>*@
+                                                </ul>
+                                            </li>
+                                            <li><a asp-area="" asp-controller="CompanyPolicies" asp-action="Index">Policies</a></li>
+                                            <li><a asp-area="" asp-controller="ContactUs" asp-action="Index">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    @*<div class="modal-search">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                                                        <form class="form-search-global">
+                                                            <input type="text" placeholder="Type to search" class="form-search-global__input" />
+                                                            <button class="form-search-global__btn"><i class="icon fa fa-search"></i></button>
+                                                            <div class="form-search-global__note">Begin typing your search above and press return to search.</div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="modal-search__close close"><i class="fa fa-times"></i></button>
+                                        </div>*@
+                                </nav>
+                                <!-- end nav-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header-->
+        <div>
+            @*<partial name="_CookieConsentPartial" />*@
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    @*<environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+            </script>
+        </environment>*@
+    <script src="~/assets/js/jquery.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.cookie.js"></script>
+    <script src="~/assets/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/assets/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/assets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/assets/lib/toastr/scripts/toastr.min.js"></script>
+
+    <script src="~/assets/plugins/slider-pro/jquery.sliderPro.min.js"></script>
+    <script src="~/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="~/assets/plugins/doubletaptogo.js"></script>
+    <script src="~/assets/plugins/waypoints.min.js"></script>
+    <script src="~/assets/plugins/flowplayer/flowplayer.min.js"></script>
+    <script src="~/assets/plugins/classie.js"></script>
+    <script src="~/assets/plugins/scrollreveal/scrollreveal.min.js"></script>
+    @*<script src="~/assets/plugins/switcher/js/dmss.js"></script>*@
+    <script src="~/assets/plugins/jarallax/jarallax.min.js"></script>
+    <script src="~/assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="~/assets/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let scroll = $.cookie('scroll');
+
+            if (scroll) {
+                scrollToID(scroll, 1000);
+                $.removeCookie('scroll');
+            }
+
+            $(document).on('click', '.scroll-to-div', function () {
+                let divId = $(this).data('id');
+
+                scrollToID(divId, 1000);
+            });
+
+            function scrollToID(id, speed) {
+                let offSet = 70;
+                let obj = $('#' + id);
+
+                if (obj.length) {
+                    let offs = obj.offset();
+                    let targetOffset = offs.top - offSet;
+                    $('html,body').animate({ scrollTop: targetOffset }, speed);
+                } else {
+                    $.cookie('scroll', id, { path: '/' });
+                    window.location = "/";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

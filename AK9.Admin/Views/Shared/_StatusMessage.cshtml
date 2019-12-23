@@ -1,0 +1,13 @@
+﻿@model AK9.AppHelper.Models.StatusModel;
+
+<script type="text/javascript">
+@{ if (Model.TransactionStatus == AK9.AppHelper.Enums.StatusEnum.Succeed)
+    {
+        <text>SuccessMessage('@Model.StatusMessage');</text>
+    }
+    else
+    {
+        <text>FailureMessage('@Model.StatusMessage');</text>
+    }
+}
+</script>

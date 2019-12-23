@@ -1,0 +1,52 @@
+﻿@using AK9.AppHelper.Models;
+@model List<AK9.AppHelper.Models.ServiceModel>
+<div class="section-type-c text-center bg-grey">
+    <h2 class="ui-title-block">What We Offers</h2>
+    <div class="ui-subtitle-block">Our services are diverse just as the needs and preferences of our clients</div>
+    <div class="ui-decor-type-1 center-block"></div>
+</div>
+@{
+    int itemsPerRow = 5;
+    int totalRows = Model != null ? Model.Count : 0;
+    int expectedRows = totalRows / itemsPerRow;
+    int extraItems = totalRows % itemsPerRow;
+    expectedRows += extraItems == 0 ? 0 : 1;
+    int currentIndex = 0;
+    ServiceModel currentItem = null;
+
+    if (totalRows > 0)
+    {
+        string css = "";
+
+        for (int n = 0; n < expectedRows; n++)
+        {
+            if (n + 1 == expectedRows)
+            {
+                css = "b-advantages-4_" + extraItems.ToString() + "-col";
+            }
+
+            <ul class="b-advantages-4 @css">
+                @for (int m = 0; m < itemsPerRow; m++)
+                {
+                    currentIndex = (itemsPerRow * n) + m;
+
+                    if (currentIndex < totalRows)
+                    {
+                        currentItem = Model[currentIndex];
+                        <li class="b-advantages-4__item">
+                            <div class="b-advantages-4__inner">
+                                <i class="b-advantages-4__icon @currentItem.ServiceIconName"></i>
+                                <div class="b-advantages-4__title"><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="@currentItem.ServiceId" style="color: inherit;">@currentItem.ServiceName</a></div><i class="b-advantages-4__decor pe-7s-angle-down"></i>
+                                <div class="b-advantages-4__text">@currentItem.ShortDescription</div>
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            </ul>
+        }
+    }
+}

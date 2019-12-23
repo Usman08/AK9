@@ -1,0 +1,30 @@
+﻿@model AK9.AppHelper.Models.CertificationModel
+@{
+    Layout = null;
+}
+@Html.HiddenFor(m => m.CertificationId)
+@Html.HiddenFor(m => m.CertificationImage)
+<div class="form-group">
+    <label for="txtCertificationName">Name</label>
+    @Html.TextBoxFor(m => m.CertificationName, new { id = "txtCertificationName", @class = "form-control", placeholder = "Certification Name" })
+    @Html.ValidationMessageFor(m => m.CertificationName, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtCertificationUrl">Url</label>
+    @Html.TextBoxFor(m => m.CertificationUrl, new { id = "txtCertificationUrl", @class = "form-control", placeholder = "Certification Url" })
+    @Html.ValidationMessageFor(m => m.CertificationUrl, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtCertificationImage">Image</label>
+    @Html.TextBoxFor(m => m.CertificationImage, new { id = "txtCertificationImage", @class = "form-control", placeholder = "Certification Image", type = "file", accept = ".png,.jpeg,.jpg" })
+    @Html.ValidationMessageFor(m => m.CertificationImage, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <div class="col-sm-5">
+        <img id="blah" src="@( Model.CertificationImage!=null? Url.Content("~/certification-image/"+Model.CertificationImage) : Url.Content("~/images/no_image.gif"))" alt="certification image" class="img-thumbnail" />
+    </div>
+</div>
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-success" />
+</div>
+

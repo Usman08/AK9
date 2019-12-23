@@ -1,0 +1,48 @@
+﻿@model AK9.AppHelper.Models.AskAQuoteModel
+<div style="background-image: url(@Url.Content("~/assets/media/components/b-form-request/bg-1.jpg"))" data-jarallax="{&quot;type&quot;: &quot;scroll-opacity&quot;}" class="b-form-request__parallax section-bg section-bg_primary jarallax"></div>
+<div class="section__inner">
+    <div class="b-form-request__inner">
+        <h2 class="b-form-request__title">Ask a Quote<span class="b-form-request__title-emphasis"> - AK9 Security Services</span></h2>
+        <div class="b-form-request__text">
+            <p>If you would like to inquire about a quote for Security Services please fill out the form below.</p>
+            <p>We will respond with 2h hours OR call us at<strong> 0044-7861-769156</strong></p>
+        </div>
+    </div>
+    <form class="b-form-request__form" id="frmAskAQuote" asp-action="AskAQuoteEmail" asp-controller="Home" data-ajax-begin="disable" data-ajax-loading="#page-preloader" data-ajax="true" data-ajax-method="post" data-ajax-complete="completed">
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", id = "txtFullName", placeholder = "Full Name" })
+                @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger small" })
+            </div>
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Company, new { @class = "form-control", id = "txtCompany", placeholder = "Company" })
+                @Html.ValidationMessageFor(m => m.Company, "", new { @class = "text-danger small" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", id = "txtEmail", placeholder = "Email", type = "email" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
+            </div>
+            <div class="col-sm-6">
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", id = "txtPhone", placeholder = "Phone", type = "tel" })
+                @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger small" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.TextBoxFor(m => m.Address, new { @class = "form-control", id = "txtAddress", placeholder = "Service Location (Address)" })
+                @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger small" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.TextBoxFor(m => m.CityStateZip, new { @class = "form-control", id = "txtCityStateZip", placeholder = "Service Location (City, State, Zip Code)" })
+                @Html.ValidationMessageFor(m => m.CityStateZip, "", new { @class = "text-danger small" })
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control", id = "txtDescription", rows = "4", placeholder = "Description of Service(s) Needed , Which Day / Date etc..." })
+                @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger small" })
+                <button type="submit" form="frmAskAQuote" class="btn btn-default btn-sm btn-effect" id="btnAskAQuote">Submit request</button>
+            </div>
+        </div><i class="b-form-request__icon pe-7s-note2"></i>
+    </form>
+</div>

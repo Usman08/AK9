@@ -1,0 +1,58 @@
+﻿@using AK9.AppHelper.AppConstants;
+@using AK9.AppHelper.Utils;
+
+@model AK9.AppHelper.Models.CertificationModel
+@{
+    ViewData["Title"] = "Update Certification";
+}
+<div class="container-fluid">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+        <h3>
+            Update Certification
+            <a class="btn btn-primary float-right" asp-controller="Certification" asp-action="Index">Back</a>
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            @using (Html.BeginForm(FormMethod.Post, new { action = "Update", controller = "Certification", enctype = "multipart/form-data" }))
+            {
+                <partial name="_certificationDetail" model="Model" />
+            }
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+                else {
+                    if ($('#CertificationImage').val()) {
+                        $('#blah').attr('src', '@Url.Content("~/certification-image/"+Model.CertificationImage)');
+                    }
+                    else {
+                        $('#blah').attr('src', '@Url.Content("~/images/no_image.gif")');
+                    }
+                }
+            }
+
+            $("#txtCertificationImage").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+
+    @using AK9.AppHelper.Models;
+    @if (ViewData[HelpingVariable.STATUS] != null)
+    {
+        <partial name="_StatusMessage" model="ViewData.GetViewData<StatusModel>(HelpingVariable.STATUS)" />
+    }
+}

@@ -1,0 +1,13 @@
+﻿@using AK9.AppHelper.AppConstants;
+@model AK9.AppHelper.Models.HomeModel
+
+<div data-min480="1" data-min768="3" data-min992="5" data-min1200="5" data-pagination="false" data-navigation="false" data-auto-play="4000" data-stop-on-hover="true" class="b-brands owl-carousel owl-theme enable-owl-carousel">
+    @foreach (var item in Model.CertificationList)
+    {
+        <div class="b-brands__item">
+            <a href="@item.CertificationUrl" target="_blank">
+                <img src="@Url.Content(string.Format(Model.CertificationLogoPath, Model.AppSettings.AdminUrl, FolderName.CERTIFICATION_IMAGE_FOLDER, item.CertificationImage))" alt="@item.CertificationName" class="img-responsive center-block" />
+            </a>
+        </div>
+    }
+</div>

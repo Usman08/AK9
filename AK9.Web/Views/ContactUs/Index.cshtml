@@ -1,0 +1,152 @@
+﻿@model AK9.AppHelper.Models.ContactUsModel
+@{
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+
+<div class="section-title-page parallax-bg parallax-light">
+    <ul class="bg-slideshow">
+        <li>
+            <div style="background-image:url(@Url.Content("~/assets/media/content/title-page/1.jpg"))" class="bg-slide"></div>
+        </li>
+    </ul>
+    <div class="parallax__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h1 class="b-title-page">Contact Us</h1>
+                    <div class="b-title-page__info">The approved contractor of Security Guard services, providing quality security services to many organizations &amp; private companies</div>
+                    <!-- end b-title-page-->
+                </div>
+                <div class="col-sm-5">
+                    <ol class="breadcrumb">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">home</a></li>
+                        <li class="active">contact us</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-contacts">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2 class="ui-title-block ui-title-block_mod-a">Whatever are your security needs, <br>- Commercial or Residential - Big or Small - <br>Contact us & we would develop a solution for you!</h2>
+                    <div class="ui-decor-type-1 center-block"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="b-contacts">
+                    <i class="b-contacts__icon pe-7s-flag"></i>
+                    <div class="b-contacts__name color-primary">location</div>
+                    <div class="b-contacts__contacts">C/O 13 Rockware Business Centre, 5 Rockware Avenue, Greenford, Middlesex, United Kingdom, UB6 0AA</div>
+                </div>
+                <!-- end b-contacts-->
+            </div>
+            <div class="col-sm-4">
+                <div class="b-contacts">
+                    <i class="b-contacts__icon pe-7s-call"></i>
+                    <div class="b-contacts__name color-primary">phone</div>
+                    <div class="b-contacts__contacts">0044-7861-769156</div>
+                </div>
+                <!-- end b-contacts-->
+            </div>
+            <div class="col-sm-4">
+                <div class="b-contacts">
+                    <i class="b-contacts__icon pe-7s-mail-open"></i>
+                    <div class="b-contacts__name color-primary">email</div>
+                    <div class="b-contacts__contacts">info@ak9securityltd.co.uk</div>
+                </div>
+                <!-- end b-contacts-->
+            </div>
+        </div>
+    </div>
+</div>
+<div id="map" class="map"></div>
+<div class="section-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="ui-form ui-form-2" id="frmContactUs" asp-action="ContactUsEmail" asp-controller="ContactUs" data-ajax-begin="disable" data-ajax-loading="#page-preloader" data-ajax="true" data-ajax-method="post" data-ajax-complete="completed">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control input_darker", id = "txtName", placeholder = "Name" })
+                                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger small" })
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input_darker", id = "txtEmail", placeholder = "Email" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control input_darker", id = "txtPhone", placeholder = "Phone", type = "tel" })
+                                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger small" })
+                                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control input_darker", id = "txtSubject", placeholder = "Subject" })
+                                    @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger small" })
+                                </div>
+                            </div>
+                            <button type="submit" form="frmContactUs" class="ui-form__btn btn btn-primary btn-sm btn-effect btn-block" id="btnContactUs">send the message</button>
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextAreaFor(m => m.Comments, new { @class = "form-control input_darker", id = "txtComments", placeholder = "Comments", rows = "7" })
+                            @Html.ValidationMessageFor(m => m.Comments, "", new { @class = "text-danger small" })
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://maps.googleapis.com/maps/api/js?"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            DisplayGoogleMap();
+        });
+
+        function DisplayGoogleMap() {
+
+            //Set the Latitude and Longitude of the Map
+            var myAddress = new google.maps.LatLng(51.5423842, -0.344065);
+
+            //Create Options or set different Characteristics of Google Map
+            var mapOptions = {
+                center: myAddress,
+                zoom: 15,
+                minZoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            //Display the Google map in the div control with the defined Options
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            //Set Marker on the Map
+            var marker = new google.maps.Marker({
+                position: myAddress,
+                animation: google.maps.Animation.BOUNCE,
+            });
+
+            marker.setMap(map);
+        }
+
+        completed = (result) => {
+            if (result.responseJSON) {
+                SuccessMessage('Your email has been sent, AK9Security will contact back you soon.');
+                $('#frmContactUs')[0].reset();
+            }
+            else {
+                FailureMessage('Some error occured, please review your form.');
+            }
+
+            $('#btnContactUs').removeAttr('disabled');
+        };
+
+        disable = () => {
+            $('#btnContactUs').attr('disabled', 'disabled');
+        }
+    </script>
+}

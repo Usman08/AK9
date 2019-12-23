@@ -1,0 +1,92 @@
+﻿@using AK9.AppHelper.AppConstants;
+@model AK9.AppHelper.Models.ServiceDetailModel
+@{
+    ViewData["Title"] = Model.Service.ServiceName;
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+
+<div class="section-title-page parallax-bg parallax-light">
+    <ul class="bg-slideshow">
+        <li>
+            <div style="background-image:url(@Url.Content("~/assets/media/content/title-page/1.jpg"))" class="bg-slide"></div>
+        </li>
+    </ul>
+    <div class="parallax__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h1 class="b-title-page">@Model.Service.ServiceName</h1>
+                    <div class="b-title-page__info">@Model.Service.ShortDescription</div>
+                    <!-- end b-title-page-->
+                </div>
+                <div class="col-sm-5">
+                    <ol class="breadcrumb">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">home</a></li>
+                        <li class="active">@Model.Service.ServiceName</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="l-main-content l-main-content_pd-rgt l-main-content_pd-top_lg">
+                <div class="posts-group">
+                    <article class="b-post b-post-4 clearfix">
+                        <div class="entry-media">
+                            <a href="@Url.Content(string.Format(Model.ServiceBannerPath, Model.AppSettings.AdminUrl, FolderName.SERVICE_BANNER_IMAGE_FOLDER, Model.Service.BannerImage))" class="js-zoom-images"><img src="@Url.Content(string.Format(Model.ServiceBannerPath, Model.AppSettings.AdminUrl, FolderName.SERVICE_BANNER_IMAGE_FOLDER, Model.Service.BannerImage))" alt="Foto" class="img-responsive" /></a>
+                        </div>
+                        <div class="entry-main">
+                            <div class="entry-header">
+                                <h2 class="entry-title entry-title_spacing ui-title-inner">@Model.Service.Heading</h2>
+                            </div>
+                            <div class="entry-content">
+                                @Model.Service.DetailedDescription
+                            </div>
+                        </div>
+                    </article>
+                    <!-- end post-->
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <aside class="l-sidebar l-sidebar_mrg-lft_minus">
+                <!-- end widget-->
+                <section class="widget section-sidebar">
+                    <h3 class="widget-title ui-title-block border-left border-left_primary">More Services</h3>
+                    <div class="widget-content">
+                        <ul class="list-widget list list-mark-4 list-unstyled">
+                            @foreach (var item in Model.ServiceList)
+                            {
+                                <li class="list-widget__item">
+                                    <a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="@item.ServiceId" class="list-widget__link">@item.ServiceName</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </section>
+                <!-- end widget-->
+                <section class="widget section-sidebar">
+                    <h3 class="widget-title ui-title-block border-left border-left_primary">about us</h3>
+                    <div class="widget-content">
+                        <p>AK9 Security Ltd. is a UK based security company, with the expertise to provide variety of security services. We provide all kind of security services to many our satisfied clients in public and private sectors all around UK.</p>
+                    </div>
+                </section>
+                <!-- end widget-->
+                <div class="section-sidebar">
+                    <div class="border-2-colors border-2-colors_border-bottom">
+                        <div class="b-banners-1 section-bg section-bg_grey-2 b-banners-1_mod-a">
+                            <div class="section__inner">
+                                <div class="b-banners-1__text">Get to know how much AK9 Security Cost</div><a href="javascript:void(0);" data-id="quote" class="scroll-to-div b-banners-1__btn btn btn-default btn-sm btn-effect">request a quote</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end b-banners-->
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@using AK9.AppHelper.AppConstants;
+@model AK9.AppHelper.Models.CompanyPolicyModel
+@{
+    ViewData["Title"] = "Policies";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+
+}
+
+<div class="section-title-page parallax-bg parallax-light">
+    <ul class="bg-slideshow">
+        <li>
+            <div style="background-image:url(@Url.Content("~/assets/media/content/title-page/1.jpg"))" class="bg-slide"></div>
+        </li>
+    </ul>
+    <div class="parallax__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h1 class="b-title-page">Company Policies</h1>
+                    <div class="b-title-page__info">The approved contractor of Security Guard services, providing quality security services to many organizations &amp; private companies</div>
+                    <!-- end b-title-page-->
+                </div>
+                <div class="col-sm-5">
+                    <ol class="breadcrumb">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">home</a></li>
+                        <li class="active">Company Policies</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="dropcap dropcap_primary">
+                    We adhere to strict policies being followed in business and we try to ensure our level best to follow the guiding principals.
+                </p>
+                <p>
+                    Provided are our policies in PDF format which can be downloaded to read.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <ul class="list list-mark-download policy_list_custom">
+                    @foreach (var item in Model.PolicyList)
+                    {
+                        <li>
+                            <h4 class="ui-title-light">@item.PolicyName</h4>
+                            <a href="@Url.Content(string.Format(Model.PolicyPdfPath, Model.AppSettings.AdminUrl, FolderName.POLICY_PDF_FOLDER, item.PolicyFile))" target="_blank" download>Download PDF</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

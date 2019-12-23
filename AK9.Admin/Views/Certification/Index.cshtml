@@ -1,0 +1,30 @@
+﻿@model AK9.AppHelper.Models.CertificationListModel
+@{
+    ViewData["Title"] = "Certification";
+}
+<div class="container-fluid">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+        <h3>
+            Certifications
+            <a class="btn btn-primary float-right" asp-controller="Certification" asp-action="Create">Create</a>
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" id="divCertificationList">
+            <partial name="_CertificationList" model="Model.CertificationList" />
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        function setDatatable() {
+            $('#tblCertification').DataTable();
+        }
+
+        $(document).ready(function () {
+            setDatatable();
+
+        });
+    </script>
+}

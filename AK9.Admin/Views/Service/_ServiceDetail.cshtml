@@ -1,0 +1,45 @@
+﻿@model AK9.AppHelper.Models.ServiceModel
+@{
+    Layout = null;
+}
+@Html.HiddenFor(m => m.ServiceId)
+@Html.HiddenFor(m => m.BannerImage)
+<div class="form-group">
+    <label for="txtServiceName">Name</label>
+    @Html.TextBoxFor(m => m.ServiceName, new { id = "txtServiceName", @class = "form-control", placeholder = "Service Name" })
+    @Html.ValidationMessageFor(m => m.ServiceName, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="ddlSeviceIcon">Service Icon</label>
+    @Html.DropDownListFor(m => m.ServiceIconId, Model.ServiceIconSelectList, null, new { @class = "form-control", id = "ddlSeviceIcon" })
+    @Html.ValidationMessageFor(m => m.ServiceIconId, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtHeading">Heading</label>
+    @Html.TextBoxFor(m => m.Heading, new { id = "txtHeading", @class = "form-control", placeholder = "Heading" })
+    @Html.ValidationMessageFor(m => m.Heading, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtShortDescription">Short Description</label>
+    @Html.TextAreaFor(m => m.ShortDescription, new { id = "txtShortDescription", @class = "form-control", placeholder = "Short Description" })
+    @Html.ValidationMessageFor(m => m.ShortDescription, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtDetailedDescription">Detailed Description</label>
+    @Html.TextAreaFor(m => m.DetailedDescription, new { id = "txtDetailedDescription", @class = "form-control", placeholder = "Detailed Description" })
+    @Html.ValidationMessageFor(m => m.DetailedDescription, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtBannerImage">Banner Image</label>
+    @Html.TextBoxFor(m => m.BannerImage, new { id = "txtBannerImage", @class = "form-control", placeholder = "Banner Image", type = "file", accept = ".png,.jpeg,.jpg" })
+    @Html.ValidationMessageFor(m => m.BannerImage, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <div class="col-sm-5">
+        <img id="blah" src="@( Model.BannerImage!=null? Url.Content("~/service-banner/" + Model.BannerImage) : Url.Content("~/images/no_image.gif"))" alt="banner image" class="img-thumbnail" />
+    </div>
+</div>
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-success" />
+</div>
+

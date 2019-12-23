@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewData["Title"] = "About Us";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+
+<div class="section-title-page parallax-bg parallax-light">
+    <ul class="bg-slideshow">
+        <li>
+            <div style="background-image:url(@Url.Content("~/assets/media/content/title-page/1.jpg"))" class="bg-slide"></div>
+        </li>
+    </ul>
+    <div class="parallax__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <h1 class="b-title-page">who we are</h1>
+                    <div class="b-title-page__info">AK9 Security Ltd. is a UK based security company, with the expertise to provide variety of security services. We provide all kind of security services to many our satisfied clients in public and private sectors all around UK.</div>
+                    <!-- end b-title-page-->
+                </div>
+                <div class="col-sm-5">
+                    <ol class="breadcrumb">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">home</a></li>
+                        <li class="active">about us</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section-default section-default_top-padd">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="ui-title-block text-center">Skilled & Qualified Security Professionals</h2>
+                <ul class="b-advantages-3 b-advantages-3_mod-a">
+                    <li class="b-advantages-3__item">
+                        <div class="b-advantages-3__subtitle">in business for 10 years</div>
+                        <div class="b-advantages-3__title color-primary">we are an experienced team</div>
+                    </li>
+                    <li class="b-advantages-3__item">
+                        <div class="b-advantages-3__subtitle">we offer 24/7 support</div>
+                        <div class="b-advantages-3__title color-primary">we are approved contractor</div>
+                    </li>
+                    <li class="b-advantages-3__item">
+                        <div class="b-advantages-3__subtitle">protect you anywhere</div>
+                        <div class="b-advantages-3__title color-primary">we have ability to secure</div>
+                    </li>
+                </ul>
+                <!-- end b-advantages-3-->
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="ui-title-inner-1">Mission Statement</h2>
+                <div class="ui-subtitle-block ui-subtitle-block_mr-btm_sm">AK9 Security has over 10 years of experience as a security company.</div>
+                <p>Our mission is to provide the reliable, professional and most cost effective security services to our clients according to their needs. We are also committed to improving the security, integrity and interpersonal skills of our employees so that they can achieve the highest standards set by the security industry and by our clients.</p>
+            </div>
+            <div class="col-sm-6"><img src="~/assets/media/content/555x300/1.jpg" alt="Foto" class="img-responsive"></div>
+        </div>
+    </div>
+</section>
+<div class="section-type-b section-bg section-bg_primary section-bg_light">
+    <div class="section__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <section class="b-type-e">
+                        <h2 class="b-type-e__title ui-title-inner-1">We Provide Security Services That Matches Your Needs & Your Budget!</h2>
+                        <div class="b-type-e__text">
+                            <p>Call us to discuss your security needs</p>
+                        </div>
+                    </section>
+                    <!-- end b-type-e-->
+                </div>
+                <div class="col-sm-5">
+                    <div class="b-contact-banner b-contact-banner_mod-a">
+                        <div class="b-contact-banner__border"></div>
+                        <div class="b-contact-banner__inner">
+                            <h3 class="b-contact-banner__title">contact us for a competitive price</h3>
+                            <div class="b-contact-banner__decor ui-decor-type-3 center-block"></div>
+                            <div class="b-contact-banner__info b-contact-banner__info_lg">0044-7861-769156</div>
+                            <div class="b-contact-banner__info">info@ak9securityltd.co.uk</div>
+                        </div>
+                    </div>
+                    <!-- end b-contact-banner-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section style="background-image: url(@Url.Content("~/assets/media/components/b-type-c/bg-1.jpg"))" data-jarallax="{&quot;type&quot;: &quot;scroll-opacity&quot;}" class="b-type-c section-default section-bg section-bg_grey-3 jarallax">
+    <div class="section__inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="b-type-c__title">Are you looking for a Smart & Exective Protection?</h2>
+                    <div class="b-type-c__subtitle">Look No Further -  Hire AK9 Security Services</div>
+                    <div class="b-type-c__text">
+                        <p>We believe in serving you by providing affordable, smart and exective class security with the help of our well-trained professionals</p>
+                        <p>We work 24 hours a day to create peace on mind for our clients. Call us at 0044-7861-769156</p>
+                    </div><a asp-controller="Home" asp-action="Index" class="b-type-c__btn btn btn-default btn-sm btn-effect">get in touch now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end b-type-c-->
+
+<div class="section-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2 class="ui-title-block">Security Personals</h2>
+                    <div class="ui-decor-type-1 center-block"></div>
+                </div>
+            </div>
+        </div>
+        <div data-min480="1" data-min768="2" data-min992="2" data-min1200="3" data-pagination="true" data-navigation="false" data-auto-play="4000" data-stop-on-hover="true" class="owl-carousel owl-theme enable-owl-carousel">
+            <section class="b-team">
+                <div class="b-team__media"><img src="~/assets/media/components/b-team/1.jpg" alt="Foto" class="img-responsive" /></div>
+                <h3 class="b-team__name">Abdul Rehman</h3>
+                <div class="b-team__category">director</div>
+                @*<div class="b-team__description">Lorem ipsum dolor sit amet consectetur adipisicing elit sed ciusmod tempor incididunt labore et dolore magna aliqua aut enim ad minim veniam quis nostrud.</div>
+                    <ul class="social-net list-inline">
+                        <li class="social-net__item"><a href="twitter.com" class="social-net__link"><i class="icon fa fa-twitter"></i></a></li>
+                        <li class="social-net__item"><a href="facebook.com" class="social-net__link"><i class="icon fa fa-facebook"></i></a></li>
+                        <li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i class="icon fa fa-google-plus"></i></a></li>
+                        <li class="social-net__item"><a href="mail.com" class="social-net__link"><i class="icon fa fa-envelope"></i></a></li>
+                    </ul>*@
+                <!-- end social-list-->
+            </section>
+            <!-- end b-team-->
+            <section class="b-team">
+                <div class="b-team__media"><img src="~/assets/media/components/b-team/2.jpg" alt="Foto" class="img-responsive" /></div>
+                <h3 class="b-team__name">Kamil Naeem</h3>
+                <div class="b-team__category">MD</div>
+                @*<div class="b-team__description">Eorem ipsum dolor sit amet consectetur adipisicing elit sed ciusmod tempor incididunt labore et dolore magna aliqua aut enim ad minim veniam quis nostrud.</div>
+                    <ul class="social-net list-inline">
+                        <li class="social-net__item"><a href="twitter.com" class="social-net__link"><i class="icon fa fa-twitter"></i></a></li>
+                        <li class="social-net__item"><a href="facebook.com" class="social-net__link"><i class="icon fa fa-facebook"></i></a></li>
+                        <li class="social-net__item"><a href="plus.google.com" class="social-net__link"><i class="icon fa fa-google-plus"></i></a></li>
+                        <li class="social-net__item"><a href="mail.com" class="social-net__link"><i class="icon fa fa-envelope"></i></a></li>
+                    </ul>*@
+                <!-- end social-list-->
+            </section>
+            <!-- end b-team-->
+        </div>
+    </div>
+</div>

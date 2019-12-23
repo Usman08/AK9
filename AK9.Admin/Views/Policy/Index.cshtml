@@ -1,0 +1,30 @@
+﻿@model AK9.AppHelper.Models.PolicyListModel
+@{
+    ViewData["Title"] = "Policy";
+}
+<div class="container-fluid">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+        <h3>
+            Policies
+            <a class="btn btn-primary float-right" asp-controller="Policy" asp-action="Create">Create</a>
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" id="divPolicyList">
+            <partial name="_PolicyList" model="Model.PolicyList" />
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        function setDatatable() {
+            $('#tblPolicy').DataTable();
+        }
+
+        $(document).ready(function () {
+            setDatatable();
+
+        });
+    </script>
+}

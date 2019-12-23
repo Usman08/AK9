@@ -1,0 +1,42 @@
+﻿@model List<AK9.AppHelper.Models.PolicyModel>
+<table class="table table-striped table-bordered" id="tblPolicy">
+    <thead class="thead-dark">
+        <tr>
+            <th>Policy Id</th>
+            <th>Policy Name</th>
+            <th>Policy File</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PolicyId</td>
+                    <td>@item.PolicyName</td>
+                    <td>
+                        @if (item.PolicyFile != null)
+                        {
+                            <a href="javascript:void(0);" data-policyfile="@item.PolicyFile"><i class="fa fa-file-alt"></i></a>
+                        }
+                    </td>
+                    <td>
+                        <a asp-controller="Policy" asp-action="Update" asp-route-id="@item.PolicyId"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#confirmationModel" data-delid="@item.PolicyId" data-targetdiv="divPolicyList" data-delurl="Policy/Delete" data-objectname="Policy"><i class="fa fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">No record found</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript">
+    setDatatable();
+</script>

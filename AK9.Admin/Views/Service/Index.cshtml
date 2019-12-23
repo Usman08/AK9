@@ -1,0 +1,30 @@
+﻿@model AK9.AppHelper.Models.ServiceListModel
+@{
+    ViewData["Title"] = "Service";
+}
+<div class="container-fluid">
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+        <h3>
+            Services
+            <a class="btn btn-primary float-right" asp-controller="Service" asp-action="Create">Create</a>
+        </h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" id="divServiceList">
+            <partial name="_ServiceList" model="Model.ServiceList" />
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        function setDatatable() {
+            $('#tblService').DataTable();
+        }
+
+        $(document).ready(function () {
+            setDatatable();
+
+        });
+    </script>
+}

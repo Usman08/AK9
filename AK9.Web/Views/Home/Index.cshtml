@@ -1,0 +1,146 @@
+﻿@using AK9.AppHelper.AppConstants;
+@model AK9.AppHelper.Models.HomeModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="true" class="main-slider main-slider_mod-a slider-pro">
+    <div class="sp-slides">
+        @foreach (var item in Model.ServiceList)
+        {
+            <div class="sp-slide">
+                <img src="~/assets/media/components/b-main-slider/bg-4.jpg" alt="slider" class="sp-image" />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-10 col-sm-offset-1">
+                            <h2 data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400" class="main-slider__title sp-layer">@item.ServiceName</h2>
+                            <div data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400" class="main-slider__info sp-layer">@item.ShortDescription</div>
+                            <div data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800" data-show-delay="400" data-hide-delay="400" class="sp-layer"><a asp-area="" asp-controller="Service" asp-action="ServiceDetail" asp-route-id="@item.ServiceId" class="main-slider__btn btn btn-primary btn-sm btn-effect">More Detail</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<section class="section-default wow">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2 class="ui-title-block">Why AK9 Security</h2>
+                    <div class="ui-subtitle-block">Providing highly professional and competitive security services</div>
+                    <div class="ui-decor-type-1 center-block"></div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <ul class="b-advantages-3">
+                    <li class="b-advantages-3__item">
+                        <div class="b-advantages-3__inner">
+                            <i class="b-advantages-3__icon color-primary flaticon-unlocked"></i>
+                            <div class="b-advantages-3__subtitle">in business for 10 years</div>
+                            <div class="b-advantages-3__title">solutions you can depend</div>
+                        </div>
+                        <div class="b-advantages-3__text">AK9 can provide the solution, with the expertise and professionalism that you would expect.</div>
+                    </li>
+                    <li class="b-advantages-3__item">
+                        <div class="b-advantages-3__inner">
+                            <i class="b-advantages-3__icon color-primary flaticon-umbrella"></i>
+                            <div class="b-advantages-3__subtitle">protect you anywhere</div>
+                            <div class="b-advantages-3__title">talented &amp; trained officers</div>
+                        </div>
+                        <div class="b-advantages-3__text">We aim to give you 100% peace of mind when we look after your security needs.</div>
+                    </li>
+                    <li class="b-advantages-3__item">
+                        <div class="b-advantages-3__inner">
+                            <i class="b-advantages-3__icon color-primary flaticon-cctv"></i>
+                            <div class="b-advantages-3__subtitle">we offer 24/7 support</div>
+                            <div class="b-advantages-3__title">AK9 Security Services</div>
+                        </div>
+                        <div class="b-advantages-3__text">We are available 24 hours a day, 7 days a week, giving you complete peace of mind.</div>
+                    </li>
+                </ul>
+                <!-- end b-advantages-3-->
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section-area wow">
+    <partial name="_ServiceList" model="Model.ServiceList" />
+</section>
+
+<div id="gallery" class="section-default section_border-bottom wow">
+    <partial name="_Gallery" />
+</div>
+
+<section id="securityFeatures" style="background-image: url(@Url.Content("~/assets/media/components/b-type-f/bg-1.jpg"))" data-jarallax="{&quot;type&quot;: &quot;scroll-opacity&quot;}" class="b-type-f section-bg section-bg_grey-2 jarallax wow">
+    <div class="section__inner clearfix">
+        <div class="text-center">
+            <h2 class="b-type-f__title ui-title-block">The Security Features</h2>
+            @*<div class="b-type-f__subtitle ui-subtitle-block">Elit sed aute dou eiusmod tempor incididunt labore dolore magna aliqua</div>*@
+            <div class="ui-decor-type-1 center-block"></div>
+        </div>
+        <div class="b-type-f__decor"><img src="~/assets/media/components/b-type-f/icon.png" alt="icon" /></div>
+        <div class="b-type-f__left-block">
+            <dl class="b-type-f__list-desription list-desription list-desription_right-align">
+                <dt><i class="icon pe-7s-pin"></i>Technical Security Surveys</dt>
+                <dd>AK9 carries out security survey and risk assessments on which recommends security program to be implemented.</dd>
+                <dt><i class="icon pe-7s-airplay"></i>Best CCTV’s System Network</dt>
+                <dd>We can provide you a robust CCTV solution to monitor your business premises. We provide a comprehensive range of CCTV solutions.</dd>
+                <dt><i class="icon pe-7s-coffee"></i>CONSULTANCY SERVICES</dt>
+                <dd>AK9 Security has a team of experts having rich experience, demonstrated performance and required knowledge to fulfill the task.</dd>
+            </dl>
+        </div>
+        <div class="b-type-f__right-block">
+            <dl class="b-type-f__list-desription list-desription">
+                <dt><i class="icon pe-7s-helm"></i>Mobile Patrol Management Team</dt>
+                <dd>We provides a very Advanced Mobile Patrol service for companies that do not require the full occupation of our Manned Guarding services.</dd>
+                <dt><i class="icon pe-7s-diamond"></i>Close Protection Security</dt>
+                <dd>We aim to offer personalized protection to all customers i. e. Business Executives, Media Personalities, and all kind of VIPs.</dd>
+                <dt><i class="icon pe-7s-share"></i>24/7 Security Service </dt>
+                <dd>We are available 24 hours a day, 7 days a week, giving you complete peace of mind.</dd>
+            </dl>
+        </div>
+        <div class="b-type-f__center-block">
+            <div class="b-type-f__img"><img src="~/assets/media/components/b-type-f/img-1.png" alt="foto" class="img-responsive" /></div>
+        </div>
+    </div>
+</section>
+
+<div id="certifications" class="section-area wow" style="padding-top:60px;">
+    <partial name="_CertificationList" model="Model" />
+</div>
+
+<div id="quote" class="section-default section-table clearfix quote_custom">
+    <section class="b-form-request section-table__inner">
+        <partial name="_AskAQuote" model="Model.AskAQuote" />
+    </section>
+    <div class="b-type-d section-bg b-type-d_mod-a section-table__inner"></div>
+</div>
+
+<footer class="footer wow footer_mod-a">
+    <partial name="_Footer" model="Model.ServiceList" />
+</footer>
+
+@section Scripts{
+    <script>
+        completed = (result) => {
+            if (result.responseJSON) {
+                SuccessMessage('Your email has been sent, AK9Security will contact back you soon.');
+                $('#frmAskAQuote')[0].reset();
+            }
+            else {
+                FailureMessage('Some error occured, please review your form.');
+            }
+
+            $('#btnAskAQuote').removeAttr('disabled');
+        };
+
+        disable = () => {
+            $('#btnAskAQuote').attr('disabled', 'disabled');
+        }
+    </script>
+}

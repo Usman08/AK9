@@ -1,0 +1,25 @@
+﻿@model AK9.AppHelper.Models.PolicyModel
+@{
+    Layout = null;
+}
+@Html.HiddenFor(m => m.PolicyId)
+@Html.HiddenFor(m => m.PolicyFile)
+<div class="form-group">
+    <label for="txtPolicyName">Name</label>
+    @Html.TextBoxFor(m => m.PolicyName, new { id = "txtPolicyName", @class = "form-control", placeholder = "Policy Name" })
+    @Html.ValidationMessageFor(m => m.PolicyName, "", new { @class = "text-danger small" })
+</div>
+<div class="form-group">
+    <label for="txtPolicyFile">PDF File</label>
+    @Html.TextBoxFor(m => m.PolicyFile, new { id = "txtPolicyFile", @class = "form-control", placeholder = "Policy File", type = "file", accept = ".pdf" })
+    @Html.ValidationMessageFor(m => m.PolicyFile, "", new { @class = "text-danger small" })
+</div>
+@*<div class="form-group">
+        <div class="col-sm-5">
+            <img id="blah" src="@( Model.CertificationImage!=null? Url.Content("~/certification-image/"+Model.CertificationImage) : Url.Content("~/images/no_image.gif"))" alt="certification image" class="img-thumbnail" />
+        </div>
+    </div>*@
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-success" />
+</div>
+
