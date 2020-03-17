@@ -1,4 +1,6 @@
 ﻿@model AK9.AppHelper.Models.ContactUsModel
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration _configuration
 @{
     ViewData["Title"] = "Contact Us";
     Layout = "~/Views/Shared/_ContentLayout.cshtml";
@@ -51,7 +53,7 @@
                 <div class="b-contacts">
                     <i class="b-contacts__icon pe-7s-call"></i>
                     <div class="b-contacts__name color-primary">phone</div>
-                    <div class="b-contacts__contacts">0044-7861-769156</div>
+                    <div class="b-contacts__contacts">+44-7861-769156</div>
                 </div>
                 <!-- end b-contacts-->
             </div>
@@ -102,7 +104,7 @@
 </div>
 
 @section Scripts{
-    <script src="https://maps.googleapis.com/maps/api/js?"></script>
+    <script src="@("https://maps.googleapis.com/maps/api/js?key=" + _configuration.GetSection("AppSettings")["GoogleMapKey"])"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             DisplayGoogleMap();

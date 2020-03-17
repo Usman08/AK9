@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Veldrid.ImageSharp" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="EASendMail">
       <HintPath>C:\Users\Usman Ajmal\.nuget\packages\easendmail\7.5.0.3\lib\netcoreapp2.1\EASendMail.dll</HintPath>
     </Reference>

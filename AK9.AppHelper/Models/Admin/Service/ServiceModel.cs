@@ -17,6 +17,8 @@ namespace AK9.AppHelper.Models
         public string ServiceIconName { get; set; }
         [Display(Name = "Banner Image")]
         public string BannerImage { get; set; }
+        [Display(Name = "Slider Image")]
+        public string SliderImage { get; set; }
         [Display(Name = "Heading")]
         [MaxLength(100)]
         public string Heading { get; set; }

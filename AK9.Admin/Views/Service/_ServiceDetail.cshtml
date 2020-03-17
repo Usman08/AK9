@@ -4,6 +4,7 @@
 }
 @Html.HiddenFor(m => m.ServiceId)
 @Html.HiddenFor(m => m.BannerImage)
+@Html.HiddenFor(m => m.SliderImage)
 <div class="form-group">
     <label for="txtServiceName">Name</label>
     @Html.TextBoxFor(m => m.ServiceName, new { id = "txtServiceName", @class = "form-control", placeholder = "Service Name" })
@@ -30,13 +31,14 @@
     @Html.ValidationMessageFor(m => m.DetailedDescription, "", new { @class = "text-danger small" })
 </div>
 <div class="form-group">
-    <label for="txtBannerImage">Banner Image</label>
-    @Html.TextBoxFor(m => m.BannerImage, new { id = "txtBannerImage", @class = "form-control", placeholder = "Banner Image", type = "file", accept = ".png,.jpeg,.jpg" })
-    @Html.ValidationMessageFor(m => m.BannerImage, "", new { @class = "text-danger small" })
+    <label for="txtBannerImage">Service Image</label>
+    @Html.TextBoxFor(m => m.SliderImage, new { id = "txtSliderImage", @class = "form-control", placeholder = "Service Image", type = "file", accept = ".png,.jpeg,.jpg" })
+    <span class="small">Recommended size: 1970 X 800</span>
+    @Html.ValidationMessageFor(m => m.SliderImage, "", new { @class = "text-danger small" })
 </div>
 <div class="form-group">
     <div class="col-sm-5">
-        <img id="blah" src="@( Model.BannerImage!=null? Url.Content("~/service-banner/" + Model.BannerImage) : Url.Content("~/images/no_image.gif"))" alt="banner image" class="img-thumbnail" />
+        <img id="blah" src="@( Model.SliderImage!=null? Url.Content("~/service-slider/" + Model.BannerImage) : Url.Content("~/images/no_image.gif"))" alt="slider image" class="img-thumbnail" />
     </div>
 </div>
 <div class="form-group">

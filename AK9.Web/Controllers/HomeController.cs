@@ -39,6 +39,7 @@ namespace AK9.Web.Controllers
             HomeModel model = new HomeModel
             {
                 AppSettings = _appSettings,
+                ServiceSliderPath = "{0}/{1}/{2}",
                 CertificationLogoPath = "{0}/{1}/{2}",
                 AskAQuote = new AskAQuoteModel(),
                 CertificationList = await _certificationBLL.GetListAsync(),
@@ -86,6 +87,12 @@ namespace AK9.Web.Controllers
             notificationUtils.SendEmail(subject, htmlBody.ToString(), _appSettings.ToEmail, isBodyHtml: true);
             _logger.LogDebug("AskAQuote email is being processed");
             return true;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Test()
+        {
+            return View();
         }
     }
 }

@@ -58,14 +58,20 @@ namespace AK9.Admin.Controllers
                 _logger.LogDebug("Service created successfully.", model.ServiceId);
                 TempData.SetStatus(new StatusModel { TransactionStatus = StatusEnum.Succeed, StatusMessage = string.Format(Message.CREATE_SUCCESS, "Service") });
 
-                string savedFileName = string.Empty;
+                string sliderImage = string.Empty;
+                string bannerImage = string.Empty;
 
                 if (Request.Form.Files != null && Request.Form.Files.Count > 0)
                 {
-                    string path = Path.Combine(_hostingEnvironment.WebRootPath, FolderName.SERVICE_BANNER_IMAGE_FOLDER);
-                    savedFileName = Helper.UploadImage(Request.Form.Files[0], path, model.ServiceId.ToString());
+                    string sliderPath = Path.Combine(_hostingEnvironment.WebRootPath, FolderName.SERVICE_SLIDER_IMAGE_FOLDER);
+                    sliderImage = Helper.UploadImage(Request.Form.Files[0], sliderPath, model.ServiceId.ToString());
+                    _logger.LogDebug("Service slider image uploaded successfully.", model.ServiceId);
+                    model.SliderImage = sliderImage;
+
+                    string bannerPath = Path.Combine(_hostingEnvironment.WebRootPath, FolderName.SERVICE_BANNER_IMAGE_FOLDER);
+                    bannerImage = Helper.UploadImage(Request.Form.Files[0], bannerPath, model.ServiceId.ToString(), 400, 300);
                     _logger.LogDebug("Service banner image uploaded successfully.", model.ServiceId);
-                    model.BannerImage = savedFileName;
+                    model.BannerImage = bannerImage;
 
                     await _serviceBLL.UpdateAsync(model);
                     _logger.LogDebug("Service banner image name updated successfully.", model.ServiceId);
@@ -104,11 +110,17 @@ namespace AK9.Admin.Controllers
 
             if (Request.Form.Files != null && Request.Form.Files.Count > 0)
             {
-                string savedFileName = string.Empty;
-                string path = Path.Combine(_hostingEnvironment.WebRootPath, FolderName.SERVICE_BANNER_IMAGE_FOLDER);
-                savedFileName = Helper.UploadImage(Request.Form.Files[0], path, model.ServiceId.ToString());
+                string sliderImage = string.Empty;
+                string bannerImage = string.Empty;
+                string sliderPath = Path.Combine(_hostingEnvironment.WebRootPath, FolderName.SERVICE_SLIDER_IMAGE_FOLDER);
+                sliderImage = Helper.UploadImage(Request.Form.Files[0], sliderPath, model.ServiceId.ToString());
+                _logger.LogDebug("Service slider image updated successfully.", model.ServiceId);
+                model.SliderImage = sliderImage;
+
+                string bannerPath = Path.Combine(_hostingEnvironment.WebRootPath, FolderName.SERVICE_BANNER_IMAGE_FOLDER);
+                bannerImage = Helper.UploadImage(Request.Form.Files[0], bannerPath, model.ServiceId.ToString(), 780, 300, true);
                 _logger.LogDebug("Service banner image updated successfully.", model.ServiceId);
-                model.BannerImage = savedFileName;
+                model.BannerImage = bannerImage;
             }
 
             if ((await _serviceBLL.UpdateAsync(model)) > 0)

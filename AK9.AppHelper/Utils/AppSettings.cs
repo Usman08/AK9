@@ -21,5 +21,13 @@
         public string AdminUrl { get; set; }
 
         public string ToEmail { get; set; }
+
+        public string GoogleMapKey { get; set; }
+
+        public string FacebookLink { get; set; }
+
+        public string LinkedInLink { get; set; }
+
+        public string InstagramLink { get; set; }
     }
 }

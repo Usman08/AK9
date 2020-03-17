@@ -2,6 +2,7 @@
 @model AK9.AppHelper.Models.HomeModel
 @{
     ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div id="main-slider" data-slider-width="100%" data-slider-height="700px" data-slider-arrows="true" class="main-slider main-slider_mod-a slider-pro">
@@ -9,7 +10,7 @@
         @foreach (var item in Model.ServiceList)
         {
             <div class="sp-slide">
-                <img src="~/assets/media/components/b-main-slider/bg-4.jpg" alt="slider" class="sp-image" />
+                <img src="@Url.Content(item.SliderImage!=null? string.Format(Model.ServiceSliderPath, Model.AppSettings.AdminUrl, FolderName.SERVICE_SLIDER_IMAGE_FOLDER, item.SliderImage) : "~/assets/media/components/b-main-slider/bg-4.jpg")" alt="slider" class="sp-image" />
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7 col-sm-10 col-sm-offset-1">

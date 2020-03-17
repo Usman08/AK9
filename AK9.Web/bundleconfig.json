@@ -1,0 +1,40 @@
+[
+  {
+    "outputFileName": "wwwroot/assets/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/assets/css/master.css",
+      "wwwroot/assets/lib/toastr/content/toastr.min.css",
+      "wwwroot/assets/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/assets/js/jquery.js",
+      "wwwroot/assets/js/custom.js",
+      "wwwroot/assets/js/bootstrap.min.js",
+      "wwwroot/assets/js/jquery.cookie.js",
+      "wwwroot/assets/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js",
+      "wwwroot/assets/lib/jquery-validation/dist/jquery.validate.min.js",
+      "wwwroot/assets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "wwwroot/assets/lib/toastr/scripts/toastr.min.js",
+      "wwwroot/assets/plugins/slider-pro/jquery.sliderPro.min.js",
+      "wwwroot/assets/plugins/owl-carousel/owl.carousel.min.js",
+      "wwwroot/assets/plugins/magnific-popup/jquery.magnific-popup.min.js",
+      "wwwroot/assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js",
+      "wwwroot/assets/plugins/doubletaptogo.js",
+      "wwwroot/assets/plugins/waypoints.min.js",
+      "wwwroot/assets/plugins/flowplayer/flowplayer.min.js",
+      "wwwroot/assets/plugins/classie.js",
+      "wwwroot/assets/plugins/scrollreveal/scrollreveal.min.js",
+      "wwwroot/assets/plugins/jarallax/jarallax.min.js",
+      "wwwroot/assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js",
+      "wwwroot/assets/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]
